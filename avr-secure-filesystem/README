@@ -1,0 +1,24 @@
+README :
+
+The purpose of this code is to illustrate a length extension attack.
+It is part of embedded hardware CTF - Riscure RHme2. It is the challenge named AVR Insecure Filesystem in the State of Crypto.
+I found this challenge and explanation of the solution in the youtube video "SHA1 length extension attack on the Secure Filesystem - rhme2 Secure Filesystem (crypto 100)"
+(https://www.youtube.com/watch?v=6QQ4kgDWQ9w&list=PLhixgUqwRTjwNaT40TqIIagv3b4_bfB7M&index=3) belonging to the "LiveOverflow" channel.
+I also found help in Angel Suarez-B. Martin (n0w) github repo for Python 3 string manipulation (https://github.com/n0w/ctf-stuff/blob/master/rhme2/secureFS/insecureFS.py)
+
+For a key size parameter of 8, the file passwd can be read and the flag is found :
+
+passwd:
+FLAG:Inn0vat1on_w3nt_wr0ng :(
+
+
+The challenges I encountered :
+- get the board running and being able to program it : I set up arduino with the verbose and was able to see the avrdude command to program it
+- understand a bit on the bootloader and boot process because I did a mistake and erased the arduino bootloader (if at power up the LED is not blinking, it means you erased the bootloader)
+- to reflash the bootloader you need a AVR programmer or like I did using another arduino nano programmed as isp programmer 
+- read and understand the theory of lenght extension attack with a form H(key || message) (https://en.wikipedia.org/wiki/Length_extension_attack)
+- install and use the tool hashpumpy
+- fight and learn a lot on the way with python 3 string formatting (f-string/format/encode/decode/utf-8/string/byte) 
+
+
+In conclusion, to avoid being vulnerable to this attack, someone should use HMAC instead with a form H(key || H(key || message)) (https://en.wikipedia.org/wiki/HMAC)
