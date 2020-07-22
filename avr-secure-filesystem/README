@@ -22,3 +22,13 @@ The challenges I encountered :
 
 
 In conclusion, to avoid being vulnerable to this attack, someone should use HMAC instead with a form H(key || H(key || message)) (https://en.wikipedia.org/wiki/HMAC)
+
+Few installation steps : 
+
+avrdude command to program the binary on the arduino nano (atmega328p) : 
+/usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -v -v -v -v -patmega328p -carduino -P/dev/ttyUSB0 -b57600 -D -Uflash:w:/home/samir/[....]/avr_filesystem.hex
+
+some python dev package missing (in Ubuntu) : sudo apt-get install python-dev
+install hashpumpy :pip install hashpumpy
+
+
