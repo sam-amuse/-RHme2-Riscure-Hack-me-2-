@@ -1,4 +1,4 @@
-# -RHme2-Riscure-Hack-me-2- (2016)
+# RHme2- Riscure Hack me 2 CTF (2016)
 
 ![alt text](https://github.com/sam-amuse/RHme2-Riscure-Hack-me-2/blob/master/rhme2-map.jpg?raw=true)
 
